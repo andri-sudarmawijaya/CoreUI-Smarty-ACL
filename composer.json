@@ -1,0 +1,20 @@
+{
+    "name": "andri-sudarmawijaya/coreui-smarty-acl",
+    "description": "Theme Core UI for CodeIgniter with Auth by Smarty ACL",
+    "type": "codeigniter-views",
+    "require": {
+        "andri-sudarmawijaya/codeigniter-smarty-acl": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andri Sudarmawijaya",
+            "email": "andri.sudarmawijaya@gmail.com"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+	}
+}
