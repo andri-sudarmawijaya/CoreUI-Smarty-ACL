@@ -3,7 +3,7 @@
     "description": "Theme Core UI for CodeIgniter with Auth by Smarty ACL",
     "type": "codeigniter-views",
     "require": {
-        "andri-sudarmawijaya/codeigniter-smarty-acl": "dev-master"
+        "andri-sudarmawijaya/codeigniter-smarty-acl": "dev-packagist"
     },
     "license": "MIT",
     "authors": [
