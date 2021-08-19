@@ -21,7 +21,7 @@ add package as array
                 'site'  => 'github',
                 'user'  => 'andri-sudarmawijaya',
                 'repos' => 'coreui-smarty-acl',
-                'name'  => 'Theme CoreUI',
+                'name'  => 'CoreUI-Smarty-ACL',
                 'dir'   => array('controllers','models', 'views'),
                 'msg'   => 'See https://github.com/andri-sudarmawijaya/coreui-smarty-acl/',
                 'example_branch' => 'master',
