@@ -38,10 +38,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <button class="btn btn-primary px-4" type="button">Login</button>
+                                        <button class="btn btn-success px-4" type="button"><i class="fa fa-sign-in" aria-hidden="true"></i>
+ Login</button>
                                     </div>
                                     <div class="col-6 text-right">
-                                        <button type="submit" class="btn btn-link px-0" type="button">Forgot password?</button>
+                                        <button type="submit" class="btn btn-light p-1 btn-link px-0" type="button">Forgot password?</button>
                                     </div>
                                 </div>
                             </form>
@@ -52,7 +53,7 @@
                             <div>
                                 <h2>Sign up</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href="<?php echo base_url('admin/register'); ?>" class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</a>
+                                <a href="<?php echo base_url('admin/register'); ?>" class="btn btn-lg btn-outline-dark mt-3" type="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Register Now!</a>
                             </div>
                         </div>
                     </div>

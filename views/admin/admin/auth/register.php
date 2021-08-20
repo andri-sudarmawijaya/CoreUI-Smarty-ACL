@@ -66,7 +66,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-12 col-md-6 p-2 bd-highlight">
-                                        <button type="submit" class="btn px-4 btn-primary btn-block"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span> Sign up</button>
+                                        <button type="submit" class="btn px-4 btn-primary btn-block"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</button>
                                     </div>
                                     <div class="col-sm-12 col-md-6 p-2 bd-highlight">
                                         <a href="<?php echo base_url('admin/forgot_password'); ?>">Forgot your password?</a>
@@ -81,7 +81,8 @@
                             <div>
                                 <h2>Have an account ?</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <a href="<?php echo base_url('admin/login'); ?>" class="btn btn-lg btn-outline-light mt-3" type="button">Sign In !</a>
+                                <a href="<?php echo base_url('admin/login'); ?>" class="btn btn-lg btn-outline-light mt-3" type="button"><i class="fa fa-sign-in" aria-hidden="true"></i>
+ Sign In !</a>
                             </div>
                         </div>
                     </div>
