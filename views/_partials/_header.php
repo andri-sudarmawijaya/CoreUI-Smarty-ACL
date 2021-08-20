@@ -11,14 +11,56 @@
             </button>
             <ul class="nav navbar-nav d-md-down-none">
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="<?php echo base_url('home'); ?>">Dashboard</a>
+                <?php if ($this->smarty_acl->logged_in(FALSE)): ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/account">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                <?php endif; ?>
+                <span class="navbar-text px-3">|</span>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Admin</a>
                 </li>
+            <?php if ($this->smarty_acl->logged_in()): ?>
+                <?php if ($this->smarty_acl->module_authorized('roles')): ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/admin/roles">Roles</a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($this->smarty_acl->module_authorized('modules')): ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/admin/modules">Modules</a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($this->smarty_acl->module_authorized('admins')): ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/admin/admins">Admins</a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($this->smarty_acl->module_authorized('users')): ?>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="/admin/users">Users</a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Users</a>
+                    <a class="nav-link" href="/admin/logout">Logout</a>
                 </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
+            <?php endif; ?>
+
+
+
+
+
+
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item d-md-down-none">
@@ -39,6 +81,9 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="hidden-xs px-2">
+                            <li class="text-white"><?php echo $this->smarty_acl->get_admin()['name']; ?> <small>(<?php echo $this->smarty_acl->get_admin()['group_name']; ?>)</small></li>
+                        </span>
                         <img class="img-avatar" src="<?php echo base_url('assets/img/avatars/6.jpg'); ?>" alt="admin@bootstrapmaster.com">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
