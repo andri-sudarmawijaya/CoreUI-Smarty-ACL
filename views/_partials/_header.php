@@ -84,7 +84,7 @@
                         <span class="hidden-xs px-2">
                             <li class="text-white"><?php echo $this->smarty_acl->get_admin()['name']; ?> <small>(<?php echo $this->smarty_acl->get_admin()['group_name']; ?>)</small></li>
                         </span>
-                        <img class="img-avatar" src="<?php echo base_url('assets/img/avatars/6.jpg'); ?>" alt="admin@bootstrapmaster.com">
+                        <img class="img-avatar" width="35px" height="35px" src="<?php echo base_url('assets/img/avatars/6.jpg'); ?>" alt="admin@bootstrapmaster.com">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header text-center">
