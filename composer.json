@@ -3,7 +3,7 @@
     "description": "Theme Core UI for CodeIgniter with Auth by Smarty ACL",
     "type": "codeigniter-views",
     "require": {
-        "andri-sudarmawijaya/codeigniter-smarty-acl": "dev-packagist"
+        "andri-sudarmawijaya/smartyacl": "1.0.x-dev"
     },
     "license": "MIT",
     "authors": [
@@ -12,6 +12,19 @@
             "email": "andri.sudarmawijaya@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "AndriSudarmawijaya\\CoreuiSmartyAcl\\": "src/"
+        }
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "AndriSudarmawijaya\\CoreuiSmartyAcl\\Installer::postInstall"
+        ],
+        "post-update-cmd": [
+            "AndriSudarmawijaya\\CoreuiSmartyAcl\\Installer::postUpdate"
+        ]
+    },
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
