@@ -17,7 +17,14 @@
                 <div class="card-group">
                     <div class="card p-4">
                         <form action="<?php echo base_url('admin/register'); ?>" method="post">
-                            <h1>Register</h1>
+                            <div class="row">
+                                <div class="col-10">
+                                    <h1>Register</h1>
+                                </div>
+                                <div class="col-2">
+                                    <a class="btn btn-lin btn-light" href="<?php echo base_url('/'); ?>" title="Back to Home"><i class="fa fa-home"></i></a>
+                                </div>
+                            </div>
                             <p class="text-muted">Please fullfil this form to create an account</p>
                             <div role="group" class="form-group">
                                 <div class="input-group">
@@ -78,7 +85,7 @@
                     </div>
                     <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                         <div class="card-body text-center">
-                            <div>
+                            <div class="align-items-center">
                                 <h2>Have an account ?</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <a href="<?php echo base_url('admin/login'); ?>" class="btn btn-lg btn-outline-light mt-3" type="button"><i class="fa fa-sign-in" aria-hidden="true"></i>
