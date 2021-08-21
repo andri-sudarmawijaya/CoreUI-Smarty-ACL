@@ -47,11 +47,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <button class="btn btn-success px-4" type="button"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        <button class="btn btn-success px-4" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>
  Login</button>
                                     </div>
                                     <div class="col-6 text-right">
-                                        <button type="submit" class="btn btn-light p-1 btn-link px-0" type="button">Forgot password?</button>
+                                        <button  class="btn btn-light p-1 btn-link px-0" type="button">Forgot password?</button>
                                     </div>
                                 </div>
                             </form>
