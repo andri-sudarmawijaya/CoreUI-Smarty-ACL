@@ -198,6 +198,7 @@ class Admin extends CI_Controller
             return redirect(current_url());
         }
         $data = ['form_action' => base_url('admin/modules/create')];
+        $data['title'] = 'Module';
         $this->admin_views('modules_form', $data);
     }
 
