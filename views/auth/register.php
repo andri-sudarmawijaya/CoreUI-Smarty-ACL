@@ -118,7 +118,8 @@ $token_val = $_SESSION['token']['value'];
     <div class="container h-100">
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md-8">
-          <?php $this->load->view('/alerts');?><div class="card-group">
+          <?php $this->load->view('partials/_alerts');?>
+            <div class="card-group">
             <div class="card p-4 bg-success text-white">
               <div class="card-body">
                 <form action="<?php echo base_url('login'); ?>" method="post">
