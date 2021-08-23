@@ -7,7 +7,6 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('smarty_acl');
-        $this->load->helper('url');
     }
 
 	/**
