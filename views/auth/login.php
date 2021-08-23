@@ -1,39 +1,51 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
 $_SESSION['token']['key'] = bin2hex(random_bytes(32));
 $_SESSION['token']['value'] = time() . bin2hex(random_bytes(32));
 
 $token_key = $_SESSION['token']['key'];
 $token_val = $_SESSION['token']['value'];
+
 ?>
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.12
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
 
 <html lang="en">
 
 <head>
-  <base href="./">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-  <meta name="author" content="Łukasz Holeczek">
-  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-  <title>CoreUI Free Bootstrap Admin Template</title>
-  <!-- Icons-->
-  <link href="<?php echo base_url('node_modules/@coreui/icons/css/coreui-icons.min.css'); ?>" rel="stylesheet">
-  <link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
-  <!-- Main styles for this application-->
-  <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+  <?php $this->load->view('_partials/_head'); ?>
 </head>
 
-<body>
-  <noscript>
-    <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-  </noscript>
-  <div class="c-app flex-row align-items-center">
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-md-8">
-          <?php $this->load->view('/alerts');?>
-          <div class="card-group">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <header class="app-header navbar _header">
+    <?php $this->load->view('_partials/_header'); ?>
+  </header>
+  <div class="app-body" id="pjax-container">
+    <div class="sidebar _sidebar">
+      <?php $this->load->view('_partials/_sidebar'); ?>
+    </div>
+    <main class="main">
+      <!-- Breadcrumb-->
+      <ol class="breadcrumb">
+        <?php $this->load->view('_partials/_breadcrumb'); ?>
+      </ol>
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+          <div class="row _highlight">
+            <?php $this->load->view('_partials/_highlight'); ?>
+          </div>
+          <!-- /.row-->
+          <?php $this->load->view('_partials/_alerts'); ?>
+          <div class="card-group _content">
+            <?php //$this->load->view('_partials/_content');
+            ?>
             <div class="card p-4 bg-success text-white">
               <div class="card-body">
                 <form action="<?php echo base_url('login'); ?>" method="post">
@@ -90,15 +102,45 @@ $token_val = $_SESSION['token']['value'];
                 </div>
               </div>
             </div>
+
+
+
+
           </div>
+          <!-- /.card-->
+          <div class="row _top">
+            <?php $this->load->view('_partials/_top'); ?>
+          </div>
+          <!-- /.row-->
+          <div class="row _bottom">
+            <?php $this->load->view('_partials/_bottom'); ?>
+          </div>
+          <!-- /.row-->
         </div>
       </div>
-    </div>
+    </main>
+    <aside class="aside-menu _aside">
+      <?php $this->load->view('_partials/_aside'); ?>
+    </aside>
   </div>
+  <footer class="app-footer _footer">
+    <?php $this->load->view('_partials/_footer'); ?>
+  </footer>
   <!-- CoreUI and necessary plugins-->
-  <script src="<?php echo base_url('node_modules/jquery/dist/jquery.min.js'); ?>"></script>
-  <script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
-  <script src="<?php echo base_url('node_modules/@coreui/coreui/dist/js/coreui.min.js'); ?>"></script>
+  <?php $this->load->view('_partials/_script'); ?>
+
+  <!-- Page necessary plugins-->
+
+  <script type="text/javascript">
+    $(function() {
+      $(document).ajaxComplete(function() {
+        Pace.restart()
+      });
+      if ($.support.pjax) {
+        $(document).pjax('a[data-pjax]', '#pjax-container')
+      }
+    });
+  </script>
 </body>
 
 </html>

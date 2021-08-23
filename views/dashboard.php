@@ -34,6 +34,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <?php $this->load->view('_partials/_highlight'); ?>
                     </div>
                     <!-- /.row-->
+                    <?php $this->load->view('_partials/_alerts');?>
                     <div class="card _content">
                         <?php $this->load->view('_partials/_content'); ?>
                     </div>
