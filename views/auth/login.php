@@ -1,51 +1,126 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 $_SESSION['token']['key'] = bin2hex(random_bytes(32));
 $_SESSION['token']['value'] = time() . bin2hex(random_bytes(32));
 
 $token_key = $_SESSION['token']['key'];
 $token_val = $_SESSION['token']['value'];
-
-?>
-<!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.12
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
+?><!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-  <?php $this->load->view('_partials/_head'); ?>
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@3.4.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-  <header class="app-header navbar _header">
-    <?php $this->load->view('_partials/_header'); ?>
-  </header>
-  <div class="app-body" id="pjax-container">
-    <div class="sidebar _sidebar">
-      <?php $this->load->view('_partials/_sidebar'); ?>
+<body class="c-app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+              <?php $this->load->view('_partials/_alerts');?>
+                <div class="card-group">
+                    <div class="card text-white bg-primary p-4">
+                        <div class="card-body">
+                            <form action="<?php echo base_url('admin/login'); ?>" method="post">
+                                <div class="row align-items-center">
+                                    <div class="col-10">
+                                        <h1>Login</h1>
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="btn btn-lin btn-light" href="<?php echo base_url('/'); ?>" title="Back to Home"><i class="fa fa-home"></i></a>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted">Sign In to your account</p>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="username" autocomplate="username" placeholder="Username">
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="password" autocomplete="current-password" name="password" placeholder="Password">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button class="btn btn-success px-4" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>
+ Login</button>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <button  class="btn btn-light p-1 btn-link px-0" type="button">Forgot password?</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card py-5 d-md-down-none" style="width:44%">
+                        <div class="card-body text-center align-items-center">
+                            <div>
+                                <h2>Sign up</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="<?php echo base_url('admin/register'); ?>" class="btn btn-lg btn-outline-dark mt-3" type="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Register Now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <main class="main">
-      <!-- Breadcrumb-->
-      <ol class="breadcrumb">
-        <?php $this->load->view('_partials/_breadcrumb'); ?>
-      </ol>
-      <div class="container-fluid">
-        <div class="animated fadeIn">
-          <div class="row _highlight">
-            <?php $this->load->view('_partials/_highlight'); ?>
-          </div>
-          <!-- /.row-->
-          <?php $this->load->view('_partials/_alerts'); ?>
-          <div class="card-group _content">
-            <?php //$this->load->view('_partials/_content');
-            ?>
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@3.4.0/dist/js/coreui.bundle.js"></script>
+    <!--[if IE]><!-->
+    <script src="https://cdn.jsdelivr.net/npm/svgxuse@1.2.6/svgxuse.min.js" integrity="sha256-+xblFIDxgSu6OfR6TdLhVHZzVrhw8eXiVk8PRi9ACY8=" crossorigin="anonymous"></script>
+    <!--<![endif]-->
+</body>
+
+</html>
+
+
+
+<?php
+$_SESSION['token']['key'] = bin2hex(random_bytes(32));
+$_SESSION['token']['value'] = time() . bin2hex(random_bytes(32));
+
+$token_key = $_SESSION['token']['key'];
+$token_val = $_SESSION['token']['value'];
+?>
+
+<html lang="en">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>CoreUI Free Bootstrap Admin Template</title>
+  <!-- Icons-->
+  <link href="<?php echo base_url('node_modules/@coreui/icons/css/coreui-icons.min.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div class="c-app flex-row align-items-center">
+    <div class="container h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-8">
+          <?php $this->load->view('/alerts');?>
+          <div class="card-group">
             <div class="card p-4 bg-success text-white">
               <div class="card-body">
                 <form action="<?php echo base_url('login'); ?>" method="post">
@@ -102,45 +177,15 @@ $token_val = $_SESSION['token']['value'];
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
-          <!-- /.card-->
-          <div class="row _top">
-            <?php $this->load->view('_partials/_top'); ?>
-          </div>
-          <!-- /.row-->
-          <div class="row _bottom">
-            <?php $this->load->view('_partials/_bottom'); ?>
-          </div>
-          <!-- /.row-->
         </div>
       </div>
-    </main>
-    <aside class="aside-menu _aside">
-      <?php $this->load->view('_partials/_aside'); ?>
-    </aside>
+    </div>
   </div>
-  <footer class="app-footer _footer">
-    <?php $this->load->view('_partials/_footer'); ?>
-  </footer>
   <!-- CoreUI and necessary plugins-->
-  <?php $this->load->view('_partials/_script'); ?>
-
-  <!-- Page necessary plugins-->
-
-  <script type="text/javascript">
-    $(function() {
-      $(document).ajaxComplete(function() {
-        Pace.restart()
-      });
-      if ($.support.pjax) {
-        $(document).pjax('a[data-pjax]', '#pjax-container')
-      }
-    });
-  </script>
+  <script src="<?php echo base_url('node_modules/jquery/dist/jquery.min.js'); ?>"></script>
+  <script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+  <script src="<?php echo base_url('node_modules/@coreui/coreui/dist/js/coreui.min.js'); ?>"></script>
 </body>
 
 </html>
