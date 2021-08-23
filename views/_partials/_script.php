@@ -8,5 +8,15 @@
         <!-- Plugins and scripts required by this view-->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui-plugin-chartjs-custom-tooltips@1.0.0/dist/js/custom-tooltips.min.js"></script>
+
+        <?php if($this->uri->segment(1) == 'admin') : ?>
         <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+        <?php endif; ?>
+
+        <?php $pages = ['customers'];
+        if (in_array($this->uri->segment(1), $pages)) : ?>
+        <script src="<?php echo base_url('assets/js/_highlight.js'); ?>"></script>
+        <?php endif; ?>
+
+
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
