@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['account'] = 'Welcome/account';
 $route['importdatabase'] = 'Welcome/importdatabase';
+
 //AUTH ROUTES
 $route['login'] = 'Auth/login';
 $route['logout'] = 'Auth/logout';
