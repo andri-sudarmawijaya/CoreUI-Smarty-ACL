@@ -58,6 +58,7 @@ $token_val = $_SESSION['token']['value'];
                                     </div>
                                     <div class="col-6 text-right">
                                         <a href="<?php echo base_url('forgot_password'); ?>"  class="btn btn-light p-1 btn-link px-0">Forgot password?</a>
+                                        <a href="<?php echo base_url('admin/register'); ?>" class="btn d-lg-none bg-dark btn-link" > Register now!</a>
                                     </div>
                                 </div>
                             </form>

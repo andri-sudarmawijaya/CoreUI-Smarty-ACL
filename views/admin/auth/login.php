@@ -51,7 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  Login</button>
                                     </div>
                                     <div class="col-6 text-right">
-                                      <a class="btn btn-sm btn-link" href="<?php echo base_url('admin/forgot_password'); ?>">Forgot your password?</a>
+                                      <a href="<?php echo base_url('admin/forgot_password'); ?>"class="btn btn-sm btn-link">Forgot your password?</a>
+                                      <a href="<?php echo base_url('admin/register'); ?>" class="btn d-lg-none bg-dark btn-link" > Register now!</a>
                                     </div>
                                 </div>
                             </form>
