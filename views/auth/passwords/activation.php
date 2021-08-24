@@ -24,7 +24,7 @@ $token_val = $_SESSION['token']['value'];
                   <div class="card-header bg-warning">
                     <div class="row">
                       <div class="col-10">
-                        <h5>Admin Request New Activation Link</h5>
+                        <h5>Request New Activation Link</h5>
                       </div>
                       <div class="col-2">
                           <a class="btn btn-lin btn-light" href="<?php echo base_url('/'); ?>" title="Back to Home"><i class="fa fa-home"></i></a>
