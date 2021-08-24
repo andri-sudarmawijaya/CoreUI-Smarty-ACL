@@ -35,32 +35,32 @@ $token_val = $_SESSION['token']['value'];
           <?php $this->load->view('_layouts/alerts'); ?>
           <div class="card">
             <div class="card-header">
-              <h5>Reset Password</h5>
+              <h5>Admin Reset Password</h5>
             </div>
             <div class="card-body">
-              <form action="/reset_password/<?php echo $code; ?>" method="post">
+              <form action="<?php echo base_url('admin/reset_password/' . $code); ?>" method="post">
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" name="email" autocomplete="email" value="<?php echo set_value('email'); ?>" placeholder="Email" class="form-control" />
+                  <input type="email" name="email" value="<?php echo set_value('email'); ?>" placeholder="Email" class="form-control" />
                 </div>
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" name="password" autocomplete="new-password" placeholder="Password" class="form-control" />
+                  <input type="password" name="password" placeholder="Password" class="form-control" />
                 </div>
                 <div class="form-group">
                   <label>Password Confirmation</label>
-                  <input type="password" name="password_confirmation" autocomplete="new-password" placeholder="Password Confirmation" class="form-control" />
+                  <input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control" />
                 </div>
                 <input type="hidden" name="token_key" value="<?php echo $token_key; ?>">
                 <input type="hidden" name="token_val" value="<?php echo $token_val; ?>">
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary"><span><i class="fa fa-user-secret" aria-hidden="true"></i></span> Resend Activation Link</button>
+                    <a class="btn btn-outline-dark" href="<?php echo base_url('admin/login'); ?>"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Log in</a>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="row">
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary"><span><i class="fa fa-user-secret" aria-hidden="true"></i></span> Reset Password</button>
-                <a class="btn btn-outline-dark" href="<?php echo base_url('login'); ?>"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Log in</a>
-              </div>
-            </div>
-            </form>
           </div>
         </div>
       </div>

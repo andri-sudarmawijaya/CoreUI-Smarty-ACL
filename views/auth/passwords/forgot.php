@@ -35,10 +35,10 @@ $token_val = $_SESSION['token']['value'];
           <?php $this->load->view('_layouts/alerts');?>
           <div class="card">
             <div class="card-header">
-              <h5>Password Recovery</h5>
+              <h5>Admin Password Recovery</h5>
             </div>
             <div class="card-body">
-              <form action="<?php echo base_url('forgot_password'); ?>" method="post">
+              <form action="<?php echo base_url('admin/forgot_password'); ?>" method="post">
                 <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" value="<?php echo set_value('email'); ?>" placeholder="Email" class="form-control" />
@@ -47,8 +47,8 @@ $token_val = $_SESSION['token']['value'];
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <button type="submit" class="btn btn-success"><span><i class="fa fa-user-secret" aria-hidden="true"></i></span> Send Password Reset Link</button>
-                    <a class="btn btn-outline-dark" href="<?php echo base_url('login'); ?>"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Log in</a>
+                    <button type="submit" class="btn btn-primary"><span><i class="fa fa-user-secret" aria-hidden="true"></i></span> Send Password Reset Link</button>
+                    <a class="btn btn-outline-dark" href="<?php echo base_url('admin/login'); ?>"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Log in</a>
                   </div>
                 </div>
               </form>
