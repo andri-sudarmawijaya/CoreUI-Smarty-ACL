@@ -76,7 +76,7 @@
                                         <button type="submit" class="btn px-4 btn-primary btn-block"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</button>
                                     </div>
                                     <div class="col-sm-12 col-md-6 p-2 bd-highlight">
-                                        <a href="<?php echo base_url('admin/forgot_password'); ?>">Forgot your password?</a>
+                                        <a class="btn btn-sm btn-link" href="<?php echo base_url('admin/forgot_password'); ?>">Forgot your password?</a>
                                         <a class="d-lg-none btn btn-outline-dark" href="<?php echo base_url('admin/login'); ?>"><span><i class="fa fa-sign-in" aria-hidden="true"></i></span> Log in!</a>
                                     </div>
                                 </div>
