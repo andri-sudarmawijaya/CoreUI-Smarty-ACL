@@ -49,6 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </footer>
     <!-- CoreUI and necessary plugins-->
     <?php $this->load->view('_partials/_script'); ?>
+    <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
 
     <!-- Page necessary plugins-->
 
