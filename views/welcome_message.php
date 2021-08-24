@@ -15,19 +15,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <?php $this->load->view('_partials/_head'); ?>
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app">
     <header class="app-header navbar _header">
         <?php $this->load->view('_partials/_header'); ?>
     </header>
     <div class="app-body" id="pjax-container">
-        <div class="sidebar _sidebar">
-            <?php $this->load->view('_partials/_sidebar'); ?>
-        </div>
         <main class="main">
-            <!-- Breadcrumb-->
-            <ol class="breadcrumb">
-                <?php $this->load->view('_partials/_breadcrumb'); ?>
-            </ol>
             <div class="container-fluid">
                 <div class="animated fadeIn">
                     <div class="row _highlight">
@@ -50,9 +43,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
             </div>
         </main>
-        <aside class="aside-menu _aside">
-            <?php $this->load->view('_partials/_aside'); ?>
-        </aside>
     </div>
     <footer class="app-footer _footer">
         <?php $this->load->view('_partials/_footer'); ?>
