@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body class="app">
     <header class="app-header navbar _header">
-        <?php $this->load->view('_partials/_header'); ?>
+        <?php $this->load->view('_partials/_noauth_header'); ?>
     </header>
     <div class="app-body" id="pjax-container">
         <main class="main">
